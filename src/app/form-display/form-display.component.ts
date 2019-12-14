@@ -10,17 +10,17 @@ import { HttpClient} from '@angular/common/http'
 export class FormDisplayComponent {
 
   post: any;
-url = "http://jsonplaceholder.typicode.com/posts/1"
+url = "http://jsonplaceholder.typicode.com/posts/"
   
-
-constructor(private http: HttpClient ) {
+  
+  constructor(private http: HttpClient ) {
 }
 
 
-buttonclick(){
-    return this.http.get(this.url).subscribe(response => { console.log(response)});
-   alert('Button was clicked')
-  return console.log("button click")
+buttonclick(textVariable){
+    this.http.get(this.url + textVariable).subscribe(response => { console.log(response)});
+  //  alert('Button was clicked')
+  return console.log(textVariable)
   };
 
   

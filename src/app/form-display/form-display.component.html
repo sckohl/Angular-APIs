@@ -3,7 +3,7 @@
         <h2>This is the API connection form!</h2>
     </div>
     <div class="form" text=""><label for="">ID request Number: </label>
-        <!-- <input type="text" (onkeyUp)="onEnter(input)" > -->
-        <button (click)="buttonclick()">Get()</button>
+        <input   type="text" #textVariable name="inputVariable"  >
+        <button (click)="buttonclick(textVariable.value)">Get()</button>
     </div>
 <!-- </form> -->
