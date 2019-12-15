@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, getModuleFactory } from '@angular/core';
+import { HttpClient,  } from '@angular/common/http'; 
 @Component({
-  selector: 'app-dummy-rest-api',
+  selector: 'dummy-rest-api',
   templateUrl: './dummy-rest-api.component.html',
   styleUrls: ['./dummy-rest-api.component.css']
 })
-export class DummyRestAPIComponent implements OnInit {
+export class DummyRestAPIComponent {
+  item: any;
+url2 = "http://dummy.restapiexample.com/api/v1/employees"
 
-  constructor() { }
+constructor(private http: HttpClient){}
 
-  ngOnInit() {
-  }
+getMore(){
+  this.http.get(this.url2).subscribe(response => {(this.item = response)
+    console.log(this.item)});
+  
+  
+}
 
 }
+
