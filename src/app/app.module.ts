@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormDisplayComponent } from './form-display/form-display.component';
+import { DummyRestAPIComponent } from './dummy-rest-api/dummy-rest-api.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormDisplayComponent
+    FormDisplayComponent,
+    DummyRestAPIComponent
   ],
   imports: [
     BrowserModule,

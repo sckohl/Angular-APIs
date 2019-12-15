@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
-import { stringify } from 'querystring';
+
 
 
 @Component({
@@ -13,6 +13,7 @@ export class FormDisplayComponent {
   post: any;
 url = "http://jsonplaceholder.typicode.com/posts/"
   
+
   
   constructor(private http: HttpClient ) {
 }
@@ -22,18 +23,14 @@ lesson: you don't need the input variable to be
   from the HTML component as a template variable.
 */
 buttonclick(textVariable){
-    this.http.get(this.url + textVariable).subscribe(response =>  {this.post = response; console.log(this.post.userId + this.post.title) });
-    
-      // { 
-      // this.post = response,
-      // console.log(response)});
-  //  alert('Button was clicked')
-    
+    this.http.get(this.url + textVariable).subscribe(response =>  {
+    this.post = response; 
+    console.log("post ID: " +this.post.ID + ". this is the post's title " +this.post.title) 
+    console.log(this.post)});
+        
   };
 
-a(){
-return console.log("second method a() "+this.post)
-}
+
 
   
 
