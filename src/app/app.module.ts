@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormDisplayComponent } from './form-display/form-display.component';
 import { DummyRestAPIComponent } from './dummy-rest-api/dummy-rest-api.component';
+import { FilterIDPipe } from './filter-id.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormDisplayComponent,
-    DummyRestAPIComponent
+    DummyRestAPIComponent,
+    FilterIDPipe
   ],
   imports: [
     BrowserModule,
