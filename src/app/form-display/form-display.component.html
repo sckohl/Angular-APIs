@@ -3,14 +3,16 @@
         <h2>This is the API connection form!</h2>
     </div>
     <div class="form" text=""><label for="">ID request Number: </label>
-        <input   type="text" #textVariable name="inputVariable"  >
-        <button (click)="buttonclick(textVariable.value)">Get Request</button>
+        <input   type="text" name="textVariable" #textVariable (click)='reset()'  >
+        <button (click)="buttonclick(textVariable.value)" >Get Request</button>
     </div>
     <div>
         <label>Output:</label>
         <ul>
-            <li *ngFor="let post of posts | filterID: 'id' : textVariable.value">
-                   ID of post: {{post.id}} Title of user: {{post.title}} 
+            
+             <li *ngFor="let post of posts| filterID | filterID: 'id' : textVariable.value"> -->
+                 {{post | json}}
+                   <!-- ID of post: {{post.id}} Title of user: {{post.title}}  -->
             </li>
         </ul>
     </div>
