@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http'
+import { HttpClient} from '@angular/common/http';
+
 
 
 
@@ -10,10 +11,11 @@ import { HttpClient} from '@angular/common/http'
 })
 export class FormDisplayComponent {
 
-  post: any;
-url = "http://jsonplaceholder.typicode.com/posts/"
-  
+  posts: any;
 
+  url = "http://jsonplaceholder.typicode.com/posts/"
+  
+  textVariable = {id: ''};
   
   constructor(private http: HttpClient ) {
 }
@@ -24,15 +26,9 @@ lesson: you don't need the input variable to be
 */
 buttonclick(textVariable){
     this.http.get(this.url + textVariable).subscribe(response =>  {
-    this.post = response; 
-    console.log("post ID: " +this.post.ID + ". this is the post's title " +this.post.title) 
-    console.log(this.post)});
+    this.posts = response; 
+    console.log("post ID: " +this.posts.ID + ". this is the post's title " +this.posts.title) 
+    console.log(this.posts)});
         
   };
-
-
-
-  
-
-
 }

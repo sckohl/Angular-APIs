@@ -9,8 +9,8 @@
     <div>
         <label>Output:</label>
         <ul>
-            <li>
-                 ID of post: {{post.id}} Title of user: {{post.title}} -->
+            <li *ngFor="let post of posts | filterID: 'id' : textVariable.value">
+                   ID of post: {{post.id}} Title of user: {{post.title}} 
             </li>
         </ul>
     </div>
